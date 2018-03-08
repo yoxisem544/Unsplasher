@@ -9,6 +9,8 @@ target 'Unsplasher' do
   pod 'NetworkRequestKit'
   pod 'RxSwift'
   pod 'ReSwift'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'UnsplasherTests' do
     inherit! :search_paths

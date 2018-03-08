@@ -10,7 +10,7 @@
 - [ ] add fastlane
 - [ ] add ad
 - [ ] add amplitude 
-- [ ] add crashlytics 
+- [x] add crashlytics 
 
 ## Open source library that i used
 - NetworkRequestKit

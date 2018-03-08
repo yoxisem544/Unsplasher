@@ -65,3 +65,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# API keys
+Unsplasher/fabric.apikey
+Unsplasher/fabric.buildsecret
