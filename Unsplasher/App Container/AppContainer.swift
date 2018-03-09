@@ -19,7 +19,13 @@ final public class AppContainer: UITabBarController, AppContainerView {
   public override func viewDidLoad() {
     super.viewDidLoad()
     
-    setViewControllers([PhotosViewController()], animated: false)
+    let pVC = PhotosViewController()
+    pVC.tabBarItem = UITabBarItem(title: "Photos", image: #imageLiteral(resourceName: "Photos_icon"), selectedImage: #imageLiteral(resourceName: "Photos_icon"))
+    
+    let pVC2 = PhotosViewController()
+    pVC2.tabBarItem = UITabBarItem(title: "Photos2", image: #imageLiteral(resourceName: "Photos_icon"), selectedImage: #imageLiteral(resourceName: "Photos_icon"))
+    
+    setViewControllers([pVC, pVC2], animated: false)
   }
   
   func generateEmptyVC() -> UIViewController {

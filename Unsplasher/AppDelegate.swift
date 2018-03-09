@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = appContainer
     window?.makeKeyAndVisible()
     window?.backgroundColor = .white
+    
+    UITabBar.appearance().tintColor = UnsplasherColor.dark
   }
   
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

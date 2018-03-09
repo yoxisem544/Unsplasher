@@ -12,5 +12,6 @@ public struct UnsplasherColor {
   
   static let backgroundGray = UIColor(hexString: "#f5f3f5")
   static let gray = UIColor(hexString: "#cac9cd")
+  static let dark = UIColor(hexString: "#272B38")
   
 }
