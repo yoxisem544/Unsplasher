@@ -69,3 +69,5 @@ fastlane/test_output
 # API keys
 Unsplasher/fabric.apikey
 Unsplasher/fabric.buildsecret
+Unsplasher/unsplash.appid
+Unsplasher/unsplash.appsecret

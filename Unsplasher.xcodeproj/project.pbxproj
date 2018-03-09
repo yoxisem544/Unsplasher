@@ -15,6 +15,8 @@
 		6393091120517069002C261E /* UnsplasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393091020517069002C261E /* UnsplasherTests.swift */; };
 		6393091D20517FB2002C261E /* fabric.apikey in Resources */ = {isa = PBXBuildFile; fileRef = 6393091C20517FB2002C261E /* fabric.apikey */; };
 		6393092120518011002C261E /* fabric.buildsecret in Resources */ = {isa = PBXBuildFile; fileRef = 6393092020518011002C261E /* fabric.buildsecret */; };
+		6393092320522775002C261E /* unsplash.appid in Resources */ = {isa = PBXBuildFile; fileRef = 6393092220522775002C261E /* unsplash.appid */; };
+		6393092520522791002C261E /* unsplash.appsecret in Resources */ = {isa = PBXBuildFile; fileRef = 6393092420522791002C261E /* unsplash.appsecret */; };
 		E4BD48E82514D78EDC1F9A05 /* Pods_UnsplasherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE6EAEF7A35B16F6ECC31D /* Pods_UnsplasherTests.framework */; };
 		F0131DACC92DBFBECA9800F1 /* Pods_Unsplasher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B5C68B5B7D879B299680EC /* Pods_Unsplasher.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		6393091220517069002C261E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393091C20517FB2002C261E /* fabric.apikey */ = {isa = PBXFileReference; lastKnownFileType = text; path = fabric.apikey; sourceTree = "<group>"; };
 		6393092020518011002C261E /* fabric.buildsecret */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fabric.buildsecret; sourceTree = "<group>"; };
+		6393092220522775002C261E /* unsplash.appid */ = {isa = PBXFileReference; lastKnownFileType = text; path = unsplash.appid; sourceTree = "<group>"; };
+		6393092420522791002C261E /* unsplash.appsecret */ = {isa = PBXFileReference; lastKnownFileType = text; path = unsplash.appsecret; sourceTree = "<group>"; };
 		82FD49F64392E1F858DF97A9 /* Pods-UnsplasherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplasherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnsplasherTests/Pods-UnsplasherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		89AB35806FE9EAB250D0888D /* Pods-Unsplasher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplasher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unsplasher/Pods-Unsplasher.release.xcconfig"; sourceTree = "<group>"; };
 		C6AAF4C8E20E820626315D76 /* Pods-Unsplasher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplasher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unsplasher/Pods-Unsplasher.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				6393090720517069002C261E /* Info.plist */,
 				6393091C20517FB2002C261E /* fabric.apikey */,
 				6393092020518011002C261E /* fabric.buildsecret */,
+				6393092220522775002C261E /* unsplash.appid */,
+				6393092420522791002C261E /* unsplash.appsecret */,
 			);
 			path = Unsplasher;
 			sourceTree = "<group>";
@@ -224,7 +230,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6393092320522775002C261E /* unsplash.appid in Resources */,
 				6393092120518011002C261E /* fabric.buildsecret in Resources */,
+				6393092520522791002C261E /* unsplash.appsecret in Resources */,
 				6393090620517069002C261E /* LaunchScreen.storyboard in Resources */,
 				6393091D20517FB2002C261E /* fabric.apikey in Resources */,
 				6393090320517069002C261E /* Assets.xcassets in Resources */,
