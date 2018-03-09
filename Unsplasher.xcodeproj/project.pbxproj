@@ -16,6 +16,10 @@
 		637D38942052B9E8001867FE /* UnsplasherNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */; };
 		637D38962052BC86001867FE /* UnsplasherColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38952052BC86001867FE /* UnsplasherColor.swift */; };
 		637D38992052BF13001867FE /* DeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38982052BF13001867FE /* DeviceDetector.swift */; };
+		637D389B2052CB08001867FE /* PhotoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D389A2052CB08001867FE /* PhotoDisplayView.swift */; };
+		637D389E2052D012001867FE /* PhotoDisplayGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D389D2052D012001867FE /* PhotoDisplayGridCell.swift */; };
+		637D38A02052D019001867FE /* PhotoDisplayGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637D389F2052D019001867FE /* PhotoDisplayGridCell.xib */; };
+		637D38A22052D0EE001867FE /* SampleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38A12052D0EE001867FE /* SampleImages.swift */; };
 		639308FC20517069002C261E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639308FB20517069002C261E /* AppDelegate.swift */; };
 		639308FE20517069002C261E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639308FD20517069002C261E /* ViewController.swift */; };
 		6393090320517069002C261E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6393090220517069002C261E /* Assets.xcassets */; };
@@ -77,6 +81,10 @@
 		637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplasherNavigationBar.swift; sourceTree = "<group>"; };
 		637D38952052BC86001867FE /* UnsplasherColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplasherColor.swift; sourceTree = "<group>"; };
 		637D38982052BF13001867FE /* DeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetector.swift; sourceTree = "<group>"; };
+		637D389A2052CB08001867FE /* PhotoDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDisplayView.swift; sourceTree = "<group>"; };
+		637D389D2052D012001867FE /* PhotoDisplayGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDisplayGridCell.swift; sourceTree = "<group>"; };
+		637D389F2052D019001867FE /* PhotoDisplayGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDisplayGridCell.xib; sourceTree = "<group>"; };
+		637D38A12052D0EE001867FE /* SampleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleImages.swift; sourceTree = "<group>"; };
 		639308F820517069002C261E /* Unsplasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639308FB20517069002C261E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639308FD20517069002C261E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */,
+				637D389A2052CB08001867FE /* PhotoDisplayView.swift */,
+				637D389D2052D012001867FE /* PhotoDisplayGridCell.swift */,
+				637D389F2052D019001867FE /* PhotoDisplayGridCell.xib */,
 			);
 			path = "Other Views";
 			sourceTree = "<group>";
@@ -193,6 +204,14 @@
 				637D38982052BF13001867FE /* DeviceDetector.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		637D389C2052CF9D001867FE /* Sample Images */ = {
+			isa = PBXGroup;
+			children = (
+				637D38A12052D0EE001867FE /* SampleImages.swift */,
+			);
+			path = "Sample Images";
 			sourceTree = "<group>";
 		};
 		639308EF20517069002C261E = {
@@ -218,6 +237,7 @@
 		639308FA20517069002C261E /* Unsplasher */ = {
 			isa = PBXGroup;
 			children = (
+				637D389C2052CF9D001867FE /* Sample Images */,
 				637D38972052BF05001867FE /* Utilities */,
 				637D38922052B99A001867FE /* Other Views */,
 				637D388F2052B84E001867FE /* Me View */,
@@ -411,6 +431,7 @@
 				6393092120518011002C261E /* fabric.buildsecret in Resources */,
 				6393092520522791002C261E /* unsplash.appsecret in Resources */,
 				6393090620517069002C261E /* LaunchScreen.storyboard in Resources */,
+				637D38A02052D019001867FE /* PhotoDisplayGridCell.xib in Resources */,
 				6393091D20517FB2002C261E /* fabric.apikey in Resources */,
 				6393090320517069002C261E /* Assets.xcassets in Resources */,
 			);
@@ -574,6 +595,7 @@
 				639309522052415B002C261E /* DataExtension.swift in Sources */,
 				639309572052415B002C261E /* SwiftyJSONExtension.swift in Sources */,
 				639309502052415B002C261E /* UICollectionViewExtension.swift in Sources */,
+				637D389E2052D012001867FE /* PhotoDisplayGridCell.swift in Sources */,
 				637D38992052BF13001867FE /* DeviceDetector.swift in Sources */,
 				639309492052415B002C261E /* ArrayExtension.swift in Sources */,
 				637D388A2052B1B4001867FE /* AppContainerRouter.swift in Sources */,
@@ -585,8 +607,10 @@
 				639308FC20517069002C261E /* AppDelegate.swift in Sources */,
 				639309462052415B002C261E /* UIColorExtension.swift in Sources */,
 				637D38882052B1AE001867FE /* AppContainerPresenter.swift in Sources */,
+				637D389B2052CB08001867FE /* PhotoDisplayView.swift in Sources */,
 				637D388C2052B1D6001867FE /* AppContainerInteractor.swift in Sources */,
 				6393095E20525C09002C261E /* UnsplashOAuthData.swift in Sources */,
+				637D38A22052D0EE001867FE /* SampleImages.swift in Sources */,
 				637D38962052BC86001867FE /* UnsplasherColor.swift in Sources */,
 				639309452052415B002C261E /* CollectionExtension.swift in Sources */,
 				6393094F2052415B002C261E /* NSObejctExtension.swift in Sources */,
