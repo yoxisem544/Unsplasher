@@ -23,5 +23,9 @@ final public class SecretKeys {
   public static var unsplashAppID: String {
     return getAPIKey(file: "unsplash", extension: "appid")
   }
+  
+  public static var unsplashAppSecret: String {
+    return getAPIKey(file: "unsplash", extension: "appsecret")
+  }
 
 }

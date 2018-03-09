@@ -13,6 +13,7 @@ target 'Unsplasher' do
   pod 'Crashlytics'
   pod 'Kanna', '~> 4.0.0'
   pod 'SDWebImage'
+  pod 'SwiftyUserDefaults'
 
   target 'UnsplasherTests' do
     inherit! :search_paths

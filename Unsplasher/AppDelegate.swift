@@ -27,6 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func setupThirdPartyDependencies() {
     Fabric.with([Crashlytics.self])
   }
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    
+    // check if open url contains code returned by unsplasher auth.
+    if url.scheme == "unsplasher", url.absoluteString.contains("code=") {
+      // trim code
+      if let code = url.absoluteString.split(separator: "=").last {
+        let code = String(code)
+        // TODO: grant access token here
+      }
+    }
+    
+    return true
+  }
 
 }
 

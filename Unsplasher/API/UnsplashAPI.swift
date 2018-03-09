@@ -18,7 +18,12 @@ public extension NetworkRequest {
 
 public struct UnsplashAPI {
   
+}
+
+public struct UnsplashAuthAPI {
   
+  public static let redirectURI: String = "unsplasher://hello.world"
+  public static let baseURL: String = "https://unsplash.com/oauth/"
   
 }
 

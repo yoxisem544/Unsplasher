@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -14,13 +15,19 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    GetPhotos().perform(page: 1)
-      .then(execute: { data in
-        print("\n", data)
-      })
-      .catch(execute: { e in
-        print(e)
-      })
+//    GetPhotos().perform(page: 1)
+//      .then(execute: { data in
+//        print("\n", data)
+//      })
+//      .catch(execute: { e in
+//        print(e)
+//      })
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    
   }
 
   override func didReceiveMemoryWarning() {

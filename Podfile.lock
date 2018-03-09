@@ -25,6 +25,7 @@ PODS:
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
   - SwiftyJSON (4.0.0-alpha.1)
+  - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
   - Crashlytics
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - ReSwift
   - RxSwift
   - SDWebImage
+  - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -46,7 +48,8 @@ SPEC CHECKSUMS:
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 0cca70c4c089bcc1bccab233eaee6d1866541f28
+PODFILE CHECKSUM: 244d5dea5f7d37a9035704b03dba942204cd4f20
 
 COCOAPODS: 1.4.0
