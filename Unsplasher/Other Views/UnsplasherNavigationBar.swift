@@ -25,10 +25,10 @@ final public class UnsplasherNavigationBar: UIView {
                                                         height: height)))
     
     backgroundColor = .white
-    applyShadow(shadowRadius: 0.1,
+    applyShadow(shadowRadius: 0.5,
                 shadowOpacity: 1,
                 shadowColor: UnsplasherColor.gray,
-                shadowOffset: CGSize(width: 0, height: 1))
+                shadowOffset: CGSize(width: 0, height: 0.5))
     
     configureTitleLabel()
     
