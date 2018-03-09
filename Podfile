@@ -14,6 +14,7 @@ target 'Unsplasher' do
   pod 'Kanna', '~> 4.0.0'
   pod 'SDWebImage'
   pod 'SwiftyUserDefaults'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   target 'UnsplasherTests' do
     inherit! :search_paths

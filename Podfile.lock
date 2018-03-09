@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.5.1)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
@@ -28,6 +31,7 @@ PODS:
   - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Crashlytics
   - Fabric
   - Kanna (~> 4.0.0)
@@ -37,8 +41,18 @@ DEPENDENCIES:
   - SDWebImage
   - SwiftyUserDefaults
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
@@ -50,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 244d5dea5f7d37a9035704b03dba942204cd4f20
+PODFILE CHECKSUM: fb80b252db33f1efee245a53c5a9747d35235d4c
 
 COCOAPODS: 1.4.0

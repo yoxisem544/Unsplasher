@@ -15,17 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
     setupThirdPartyDependencies()
+
+    setupView()
     
     return true
   }
 
   func setupThirdPartyDependencies() {
     Fabric.with([Crashlytics.self])
+  }
+  
+  func setupView() {
+    window = UIWindow(frame: UIScreen.main.bounds)
+    let appContainer = AppContainerBuilder().buildContainer()!
+    window?.rootViewController = appContainer
+    window?.makeKeyAndVisible()
+    window?.backgroundColor = .white
   }
   
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
