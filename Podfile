@@ -11,6 +11,8 @@ target 'Unsplasher' do
   pod 'ReSwift'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Kanna', '~> 4.0.0'
+  pod 'SDWebImage'
 
   target 'UnsplasherTests' do
     inherit! :search_paths

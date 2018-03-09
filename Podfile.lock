@@ -3,6 +3,7 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
+  - Kanna (4.0.0)
   - NetworkRequestKit (2.1.0):
     - Alamofire (~> 4.5)
     - PromiseKit (~> 4.4)
@@ -20,25 +21,32 @@ PODS:
     - PromiseKit/CorePromise
   - ReSwift (4.0.0)
   - RxSwift (4.0.0)
+  - SDWebImage (4.3.2):
+    - SDWebImage/Core (= 4.3.2)
+  - SDWebImage/Core (4.3.2)
   - SwiftyJSON (4.0.0-alpha.1)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
+  - Kanna (~> 4.0.0)
   - NetworkRequestKit
   - ReSwift
   - RxSwift
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
   NetworkRequestKit: 569fbfaa13ddb22fd54c2711be37db51add14524
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
 
-PODFILE CHECKSUM: e8365f56bdcc78a409cc91a29c57fdf1fb2af44d
+PODFILE CHECKSUM: 0cca70c4c089bcc1bccab233eaee6d1866541f28
 
 COCOAPODS: 1.4.0
