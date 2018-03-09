@@ -13,6 +13,9 @@
 		637D388A2052B1B4001867FE /* AppContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38892052B1B4001867FE /* AppContainerRouter.swift */; };
 		637D388C2052B1D6001867FE /* AppContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D388B2052B1D6001867FE /* AppContainerInteractor.swift */; };
 		637D38912052B8B4001867FE /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38902052B8B4001867FE /* PhotosViewController.swift */; };
+		637D38942052B9E8001867FE /* UnsplasherNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */; };
+		637D38962052BC86001867FE /* UnsplasherColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38952052BC86001867FE /* UnsplasherColor.swift */; };
+		637D38992052BF13001867FE /* DeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D38982052BF13001867FE /* DeviceDetector.swift */; };
 		639308FC20517069002C261E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639308FB20517069002C261E /* AppDelegate.swift */; };
 		639308FE20517069002C261E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639308FD20517069002C261E /* ViewController.swift */; };
 		6393090320517069002C261E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6393090220517069002C261E /* Assets.xcassets */; };
@@ -71,6 +74,9 @@
 		637D38892052B1B4001867FE /* AppContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerRouter.swift; sourceTree = "<group>"; };
 		637D388B2052B1D6001867FE /* AppContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerInteractor.swift; sourceTree = "<group>"; };
 		637D38902052B8B4001867FE /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplasherNavigationBar.swift; sourceTree = "<group>"; };
+		637D38952052BC86001867FE /* UnsplasherColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplasherColor.swift; sourceTree = "<group>"; };
+		637D38982052BF13001867FE /* DeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetector.swift; sourceTree = "<group>"; };
 		639308F820517069002C261E /* Unsplasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639308FB20517069002C261E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639308FD20517069002C261E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,8 +181,18 @@
 		637D38922052B99A001867FE /* Other Views */ = {
 			isa = PBXGroup;
 			children = (
+				637D38932052B9E8001867FE /* UnsplasherNavigationBar.swift */,
 			);
 			path = "Other Views";
+			sourceTree = "<group>";
+		};
+		637D38972052BF05001867FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				637D38952052BC86001867FE /* UnsplasherColor.swift */,
+				637D38982052BF13001867FE /* DeviceDetector.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		639308EF20517069002C261E = {
@@ -202,6 +218,7 @@
 		639308FA20517069002C261E /* Unsplasher */ = {
 			isa = PBXGroup;
 			children = (
+				637D38972052BF05001867FE /* Utilities */,
 				637D38922052B99A001867FE /* Other Views */,
 				637D388F2052B84E001867FE /* Me View */,
 				637D388E2052B841001867FE /* Collections View */,
@@ -557,6 +574,7 @@
 				639309522052415B002C261E /* DataExtension.swift in Sources */,
 				639309572052415B002C261E /* SwiftyJSONExtension.swift in Sources */,
 				639309502052415B002C261E /* UICollectionViewExtension.swift in Sources */,
+				637D38992052BF13001867FE /* DeviceDetector.swift in Sources */,
 				639309492052415B002C261E /* ArrayExtension.swift in Sources */,
 				637D388A2052B1B4001867FE /* AppContainerRouter.swift in Sources */,
 				6393092A20522841002C261E /* GrantAccessToken.swift in Sources */,
@@ -569,8 +587,10 @@
 				637D38882052B1AE001867FE /* AppContainerPresenter.swift in Sources */,
 				637D388C2052B1D6001867FE /* AppContainerInteractor.swift in Sources */,
 				6393095E20525C09002C261E /* UnsplashOAuthData.swift in Sources */,
+				637D38962052BC86001867FE /* UnsplasherColor.swift in Sources */,
 				639309452052415B002C261E /* CollectionExtension.swift in Sources */,
 				6393094F2052415B002C261E /* NSObejctExtension.swift in Sources */,
+				637D38942052B9E8001867FE /* UnsplasherNavigationBar.swift in Sources */,
 				639309442052415B002C261E /* UIAlertControllerExtension.swift in Sources */,
 				6393094E2052415B002C261E /* SDWebImageExtension.swift in Sources */,
 				639309512052415B002C261E /* Queue.swift in Sources */,

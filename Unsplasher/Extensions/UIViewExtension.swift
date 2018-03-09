@@ -176,5 +176,12 @@ extension UIView {
 	func screenShot() -> UIImage? {
 		return screenShot(width: bounds.width)
 	}
+  
+  func applyShadow(shadowRadius: CGFloat, shadowOpacity: Float, shadowColor: UIColor, shadowOffset: CGSize) {
+    layer.shadowColor = shadowColor.cgColor
+    layer.shadowOffset = shadowOffset
+    layer.shadowRadius = shadowRadius
+    layer.shadowOpacity = shadowOpacity
+  }
     
 }

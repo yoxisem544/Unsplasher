@@ -10,10 +10,18 @@ import UIKit
 
 final public class PhotosViewController: UIViewController {
   
+  private var navigationBar: UnsplasherNavigationBar!
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
     
-    
+    configuerNavigationBar()
+  }
+  
+  private func configuerNavigationBar() {
+    navigationBar = UnsplasherNavigationBar()
+    navigationBar.anchor(to: view)
+    navigationBar.title = "yaaa"
   }
   
 }

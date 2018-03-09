@@ -19,7 +19,7 @@ final public class AppContainer: UITabBarController, AppContainerView {
   public override func viewDidLoad() {
     super.viewDidLoad()
     
-    setViewControllers([generateEmptyVC()], animated: false)
+    setViewControllers([PhotosViewController()], animated: false)
   }
   
   func generateEmptyVC() -> UIViewController {
