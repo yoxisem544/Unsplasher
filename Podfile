@@ -13,7 +13,7 @@ target 'Unsplasher' do
   pod 'Crashlytics'
   pod 'SDWebImage'
   pod 'SwiftyUserDefaults'
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'CHTCollectionViewWaterfallLayout/Swift'
 
   target 'UnsplasherTests' do
     inherit! :search_paths

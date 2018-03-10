@@ -1,8 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
-  - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.7)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
@@ -30,7 +28,7 @@ PODS:
   - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - CHTCollectionViewWaterfallLayout/Swift
   - Crashlytics
   - Fabric
   - NetworkRequestKit
@@ -39,18 +37,9 @@ DEPENDENCIES:
   - SDWebImage
   - SwiftyUserDefaults
 
-EXTERNAL SOURCES:
-  ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
-
-CHECKOUT OPTIONS:
-  ChameleonFramework:
-    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
-    :git: https://github.com/ViccAlexander/Chameleon.git
-
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   NetworkRequestKit: 569fbfaa13ddb22fd54c2711be37db51add14524
@@ -61,6 +50,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 768413718f59c120972108e6d2141d8e77231ec4
+PODFILE CHECKSUM: 3fc00719b254ce9df260325fd64bfbbadf946503
 
 COCOAPODS: 1.4.0

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 David. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public protocol PhotosBrowserPresenterType {
   func loadMorePhotos()
@@ -40,9 +40,12 @@ final public class PhotosBrowserPresenter : PhotosBrowserPresenterType {
 public struct PhotosViewModel {
   
   let photoURLs: UnsplashPhotoURLs
+  let photoSize: CGSize
   
   init(photoResult: GetPhotoResult) {
     photoURLs = photoResult.photo.urls
+    photoSize = CGSize(width: photoResult.photo.width.cgFloat,
+                       height: photoResult.photo.height.cgFloat)
   }
   
   public static func build(with photoResults: [GetPhotoResult]) -> [PhotosViewModel] {

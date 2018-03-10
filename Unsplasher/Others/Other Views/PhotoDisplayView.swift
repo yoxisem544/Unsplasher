@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CHTCollectionViewWaterfallLayout
 
 public enum PhotoDisplayStyle {
   case grid, list
@@ -14,7 +15,7 @@ public enum PhotoDisplayStyle {
 
 final public class PhotoDisplayView: UIView {
   
-  private var displayingCollectionViewFlowLayout: UICollectionViewFlowLayout!
+  private var displayingCollectionViewFlowLayout: CHTCollectionViewWaterfallLayout!
   private var displayingCollectionView: UICollectionView!
   
   public var photos: [PhotosViewModel] = [] {
@@ -64,9 +65,9 @@ final public class PhotoDisplayView: UIView {
   }
   
   private func configureDisplayingCollectionView() {
-    displayingCollectionViewFlowLayout = UICollectionViewFlowLayout()
-    displayingCollectionViewFlowLayout.itemSize = itemSize
-    displayingCollectionViewFlowLayout.minimumLineSpacing = lineSpacing
+    displayingCollectionViewFlowLayout = CHTCollectionViewWaterfallLayout()
+    displayingCollectionViewFlowLayout.columnCount = 2
+    displayingCollectionViewFlowLayout.minimumColumnSpacing = lineSpacing
     displayingCollectionViewFlowLayout.minimumInteritemSpacing = interitemSpacing
     displayingCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: interitemSpacing,
                                                                    left: interitemSpacing,
@@ -104,8 +105,13 @@ extension PhotoDisplayView : UICollectionViewDataSource {
   
 }
 
-extension PhotoDisplayView : UICollectionViewDelegateFlowLayout {
+extension PhotoDisplayView : CHTCollectionViewDelegateWaterfallLayout {
   
-  
+  public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    let photoSize = photos[indexPath.row].photoSize
+    let size = CGSize(width: itemSize.width,
+                      height: photoSize.height * itemSize.width / photoSize.width)
+    return size
+  }
   
 }
