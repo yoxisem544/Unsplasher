@@ -17,7 +17,7 @@ final public class GrantAccessToken : NetworkRequest {
   // Auth code
   private var code: String = ""
   
-  public var baseURL: String { return UnsplashAuthAPI.redirectURI }
+  public var baseURL: String { return UnsplashAuthAPI.baseURL }
   public var endpoint: String { return "token" }
   public var method: HTTPMethod { return .post }
   public var parameters: [String : Any]? {
