@@ -23,15 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     setupView()
     
 //    RequestAuthCode().perform(scopes: UnsplashAPIPermissionScope.allScopes)
-    
-    GetPhotos().perform(page: 1)
-      .then(execute: { photos in
-        print(photos)
-      })
-      .catch(execute: { e in
-        print(e)
-      })
-    
+      
     return true
   }
 

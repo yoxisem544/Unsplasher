@@ -15,7 +15,9 @@ public protocol AppContainerBuilderType {
 final public class AppContainerBuilder : AppContainerBuilderType {
   
   public func buildContainer() -> UIViewController? {
-    let view = AppContainer()
+    let photosBrowserModule = PhotosBrowserBuilder().buildPhotoBrowserModule() as! PhotosBrowserViewController
+    
+    let view = AppContainer(photoBrowserViewController: photosBrowserModule)
     
     let interactor = AppContainerInteractor()
     let router = AppContainerRouter(viewController: view)

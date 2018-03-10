@@ -1,5 +1,5 @@
 //
-//  PhotosViewController.swift
+//  PhotosBrowserViewController.swift
 //  Unsplasher
 //
 //  Created by David on 2018/3/9.
@@ -8,10 +8,16 @@
 
 import UIKit
 
-final public class PhotosViewController: UIViewController {
+public protocol PhotosBrowserView: class {
+  
+}
+
+final public class PhotosBrowserViewController: UIViewController, PhotosBrowserView {
   
   private var navigationBar: UnsplasherNavigationBar!
   private var photoDisplayingView: PhotoDisplayView!
+  
+  public var presenter: PhotosBrowserPresenterType?
   
   public override func viewDidLoad() {
     super.viewDidLoad()
