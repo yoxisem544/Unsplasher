@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol PhotosBrowserView: class {
-  
+  func reloadPhotos(photos: [PhotosViewModel])
 }
 
 final public class PhotosBrowserViewController: UIViewController, PhotosBrowserView {
@@ -24,6 +24,8 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
     
     configuerNavigationBar()
     configurePhotoDisplayingView()
+    
+    presenter?.loadMorePhotos()
   }
   
   private func configuerNavigationBar() {
@@ -39,6 +41,10 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
     photoDisplayingView.backgroundColor = .green
     photoDisplayingView.anchor(to: view, below: navigationBar)
     photoDisplayingView.move(0, pointBelow: navigationBar)
+  }
+  
+  public func reloadPhotos(photos: [PhotosViewModel]) {
+    photoDisplayingView.photos = photos
   }
   
 }

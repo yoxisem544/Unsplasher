@@ -19,13 +19,10 @@ final public class PhotoDisplayGridCell: UICollectionViewCell {
     photoImageView.layer.cornerRadius = 4.0
     photoImageView.clipsToBounds = true
     
-    photoImageView.image = SampleImages.getOne()
   }
   
   public override func prepareForReuse() {
     super.prepareForReuse()
-    
-    photoImageView.image = SampleImages.getOne()
   }
   
 }

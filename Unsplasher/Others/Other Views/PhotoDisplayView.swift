@@ -17,6 +17,12 @@ final public class PhotoDisplayView: UIView {
   private var displayingCollectionViewFlowLayout: UICollectionViewFlowLayout!
   private var displayingCollectionView: UICollectionView!
   
+  public var photos: [PhotosViewModel] = [] {
+    didSet {
+      displayingCollectionView.reloadData()
+    }
+  }
+  
   public var style: PhotoDisplayStyle = .grid
   private let lineSpacing: CGFloat = 8
   private let interitemSpacing: CGFloat = 8
@@ -87,11 +93,12 @@ extension PhotoDisplayView : UICollectionViewDataSource {
   }
   
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 20
+    return photos.count
   }
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(with: PhotoDisplayGridCell.self, for: indexPath)
+    cell.photoImageView.setImage(with: photos[indexPath.row].photoURLs.small)
     return cell
   }
   

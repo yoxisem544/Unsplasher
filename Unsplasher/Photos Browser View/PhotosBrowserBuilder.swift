@@ -17,7 +17,9 @@ final public class PhotosBrowserBuilder : PhotosBrowserBuilderType {
   public func buildPhotoBrowserModule() -> UIViewController? {
     let view = PhotosBrowserViewController()
     
-    let interactor = PhotosBrowserInteractor()
+    let photoFetcher = GetPhotosService()
+    let photoCache = PhotoCachingService(photoFetcher: photoFetcher)
+    let interactor = PhotosBrowserInteractor(photoCache: photoCache)
     let router = PhotosBrowserRouter(viewController: view)
     let presenter = PhotosBrowserPresenter(view: view,
                                            router: router,

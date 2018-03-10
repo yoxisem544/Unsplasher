@@ -15,11 +15,11 @@ public enum PhotoOrderType: String {
   case latest, popular
 }
 
-public protocol GetPhotosService {
+public protocol GetPhotosServiceType {
   func perform(page: Int, order: PhotoOrderType) -> Promise<[GetPhotoResult]>
 }
 
-final public class GetPhotos : NetworkRequest, PagingEnabledRequest, GetPhotosService {
+final public class GetPhotosService : NetworkRequest, PagingEnabledRequest, GetPhotosServiceType {
   public typealias ResponseType = [GetPhotoResult]
   public var page: Int = 1
   public var order: PhotoOrderType = .latest

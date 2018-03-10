@@ -31,9 +31,9 @@ final public class PhotoCachingService : PhotoCachingServiceType {
   public var popularPhotos: [GetPhotoResult] = []
   
   
-  private let photoFetcher: GetPhotosService
+  private let photoFetcher: GetPhotosServiceType
   
-  init(photoFetcher: GetPhotosService) {
+  init(photoFetcher: GetPhotosServiceType) {
     self.photoFetcher = photoFetcher
   }
   
