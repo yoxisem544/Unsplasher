@@ -22,6 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     setupView()
     
+//    print(UserDefaults.standard[.accessToken])
+    
+//    RequestAuthCode().perform(scopes: UnsplashAPIPermissionScope.allScopes)
+    
+
+    SearchUsers().perform(query: "yoxisem544", page: 1)
+      .then(execute: { result in
+        print(result)
+      })
+      .catch(execute: { e in
+        print(e)
+      })
+    
     return true
   }
 
@@ -43,11 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     
     // check if open url contains code returned by unsplasher auth.
+    print(url.absoluteString)
     if url.scheme == "unsplasher", url.absoluteString.contains("code=") {
       // trim code
       if let code = url.absoluteString.split(separator: "=").last {
         let code = String(code)
         // TODO: grant access token here
+        GrantAccessToken().performAuthencation(with: code)
+          .then(execute: { response in
+            UserDefaults.standard[.accessToken] = response.accessToken
+          })
+          .catch(execute: { e in
+            print(e)
+          })
       }
     }
     

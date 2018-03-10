@@ -11,8 +11,14 @@ import NetworkRequestKit
 public extension NetworkRequest {
   
   var baseURL: String { return "https://api.unsplash.com/" }
-  var accessToken: String { return "SOMETOKEN" }
-  var headers: [String : String] { return ["Accept-Version": "v1"] }
+  var accessToken: String? { return UserDefaults.standard[.accessToken] }
+  var headers: [String : String] {
+    if let accessToken = accessToken {
+      return ["Accept-Version": "v1", "Authorization": "Bearer \(accessToken)"]
+    } else {
+      return ["Accept-Version": "v1"]
+    }
+  }
 
 }
 
@@ -56,7 +62,11 @@ public enum UnsplashAPIPermissionScope: String {
       .joined(separator: "+")
   }
   
-  public static var allScopes: String {
-    return join(scopes: [.public, .readUser, .writeUser, .readPhotos, .writePhotos, .writeLikes, .writeFollowers, .readCollections, .writeCollections])
+  public static var allScopes: [UnsplashAPIPermissionScope] {
+    return [.public, .readUser, .writeUser, .readPhotos, .writePhotos, .writeLikes, .writeFollowers, .readCollections, .writeCollections]
+  }
+  
+  public static var allScopesString: String {
+    return join(scopes: allScopes)
   }
 }

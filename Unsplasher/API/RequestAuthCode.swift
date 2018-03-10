@@ -13,7 +13,7 @@ final public class RequestAuthCode {
   public func perform(scopes: [UnsplashAPIPermissionScope]) {
     let joinedScoped = UnsplashAPIPermissionScope.join(scopes: scopes)
     let url = "\(UnsplashAuthAPI.baseURL)authorize?client_id=\(SecretKeys.unsplashAppID)&redirect_uri=\(UnsplashAuthAPI.redirectURI)&response_type=code&scope=\(joinedScoped)".url!
-
+    
     UIApplication.shared.open(url, options: [:])
   }
   
