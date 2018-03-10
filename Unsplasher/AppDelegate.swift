@@ -22,14 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     setupView()
     
-//    print(UserDefaults.standard[.accessToken])
-    
 //    RequestAuthCode().perform(scopes: UnsplashAPIPermissionScope.allScopes)
     
-
-    SearchUsers().perform(query: "yoxisem544", page: 1)
-      .then(execute: { result in
-        print(result)
+    GetPhotos().perform(page: 1)
+      .then(execute: { photos in
+        print(photos)
       })
       .catch(execute: { e in
         print(e)

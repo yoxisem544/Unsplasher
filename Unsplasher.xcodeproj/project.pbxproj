@@ -62,6 +62,7 @@
 		63F44024205389BB00E73044 /* SearchUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F44023205389BB00E73044 /* SearchUserResult.swift */; };
 		63F4402620538A4C00E73044 /* UnsplashPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4402520538A4C00E73044 /* UnsplashPhoto.swift */; };
 		63F4402820538E7500E73044 /* SearchUserResultsWithTotalPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4402720538E7500E73044 /* SearchUserResultsWithTotalPages.swift */; };
+		63F4402A2053ABDD00E73044 /* GetPhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F440292053ABDD00E73044 /* GetPhotoResult.swift */; };
 		E4BD48E82514D78EDC1F9A05 /* Pods_UnsplasherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE6EAEF7A35B16F6ECC31D /* Pods_UnsplasherTests.framework */; };
 		F0131DACC92DBFBECA9800F1 /* Pods_Unsplasher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B5C68B5B7D879B299680EC /* Pods_Unsplasher.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,7 @@
 		63F44023205389BB00E73044 /* SearchUserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResult.swift; sourceTree = "<group>"; };
 		63F4402520538A4C00E73044 /* UnsplashPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhoto.swift; sourceTree = "<group>"; };
 		63F4402720538E7500E73044 /* SearchUserResultsWithTotalPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResultsWithTotalPages.swift; sourceTree = "<group>"; };
+		63F440292053ABDD00E73044 /* GetPhotoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoResult.swift; sourceTree = "<group>"; };
 		82FD49F64392E1F858DF97A9 /* Pods-UnsplasherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplasherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnsplasherTests/Pods-UnsplasherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		89AB35806FE9EAB250D0888D /* Pods-Unsplasher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplasher.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unsplasher/Pods-Unsplasher.release.xcconfig"; sourceTree = "<group>"; };
 		C6AAF4C8E20E820626315D76 /* Pods-Unsplasher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplasher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unsplasher/Pods-Unsplasher.debug.xcconfig"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				63F44023205389BB00E73044 /* SearchUserResult.swift */,
 				63F4402720538E7500E73044 /* SearchUserResultsWithTotalPages.swift */,
 				63F4402520538A4C00E73044 /* UnsplashPhoto.swift */,
+				63F440292053ABDD00E73044 /* GetPhotoResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,7 +492,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Unsplasher/Pods-Unsplasher-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/NetworkRequestKit/NetworkRequestKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
@@ -502,7 +504,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NetworkRequestKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
@@ -610,6 +611,7 @@
 				637D38912052B8B4001867FE /* PhotosViewController.swift in Sources */,
 				637D38862052B12B001867FE /* AppContainerBuilder.swift in Sources */,
 				6393094C2052415B002C261E /* UIViewControllerExtension.swift in Sources */,
+				63F4402A2053ABDD00E73044 /* GetPhotoResult.swift in Sources */,
 				6393092820522813002C261E /* UnsplashAPI.swift in Sources */,
 				639309522052415B002C261E /* DataExtension.swift in Sources */,
 				639309572052415B002C261E /* SwiftyJSONExtension.swift in Sources */,

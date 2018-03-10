@@ -8,7 +8,31 @@
 
 import Foundation
 
-public struct UnsplashUser: Codable, CustomStringConvertible {
+public enum FollowedByUser: Decodable {
+  case yes, no, unknown
+  
+  init(followed: Bool?) {
+    switch followed {
+    case .some(let value):
+      self = value ? .yes : .no
+    default:
+      self = .unknown
+    }
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case followedByUser = "followed_by_user"
+  }
+  
+  public init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    let followed = try container.decodeIfPresent(Bool.self, forKey: FollowedByUser.CodingKeys.followedByUser)
+    
+    self = FollowedByUser(followed: followed)
+  }
+}
+
+public struct UnsplashUser: Decodable, CustomStringConvertible {
   
   public var description: String {
     return """
@@ -40,7 +64,7 @@ public struct UnsplashUser: Codable, CustomStringConvertible {
   let profileImage: UserProfileImage
   let links: UnsplashUserLinks
   let updatedAt: String
-  let followedByUser: Bool
+  let followedByUser: FollowedByUser
   let bio: String?
   let location: String?
   
@@ -89,7 +113,8 @@ extension UnsplashUser {
     profileImage = try container.decode(UserProfileImage.self, forKey: CodingKeys.profileImage)
     links = try container.decode(UnsplashUserLinks.self, forKey: CodingKeys.links)
     updatedAt = try container.decode(String.self, forKey: CodingKeys.updatedAt)
-    followedByUser = try container.decode(Bool.self, forKey: CodingKeys.followedByUser)
+    let followedByUser = try container.decodeIfPresent(Bool.self, forKey: CodingKeys.followedByUser)
+    self.followedByUser = FollowedByUser(followed: followedByUser)
     bio = try container.decodeIfPresent(String.self, forKey: CodingKeys.bio)
     location = try container.decodeIfPresent(String.self, forKey: CodingKeys.location)
   }

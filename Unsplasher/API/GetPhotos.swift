@@ -12,7 +12,7 @@ import PromiseKit
 import SwiftyJSON
 
 final public class GetPhotos : NetworkRequest, PagingEnabledRequest {
-  public typealias ResponseType = RawJSONResult
+  public typealias ResponseType = [GetPhotoResult]
   public var page: Int = 1
   
   public var endpoint: String { return "photos" }

@@ -11,7 +11,6 @@ target 'Unsplasher' do
   pod 'ReSwift'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Kanna', '~> 4.0.0'
   pod 'SDWebImage'
   pod 'SwiftyUserDefaults'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'

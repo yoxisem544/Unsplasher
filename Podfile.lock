@@ -6,7 +6,6 @@ PODS:
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
-  - Kanna (4.0.0)
   - NetworkRequestKit (2.1.0):
     - Alamofire (~> 4.5)
     - PromiseKit (~> 4.4)
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Crashlytics
   - Fabric
-  - Kanna (~> 4.0.0)
   - NetworkRequestKit
   - ReSwift
   - RxSwift
@@ -55,7 +53,6 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
-  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
   NetworkRequestKit: 569fbfaa13ddb22fd54c2711be37db51add14524
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
@@ -64,6 +61,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: fb80b252db33f1efee245a53c5a9747d35235d4c
+PODFILE CHECKSUM: 768413718f59c120972108e6d2141d8e77231ec4
 
 COCOAPODS: 1.4.0
