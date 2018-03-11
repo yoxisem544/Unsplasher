@@ -14,7 +14,7 @@ public protocol AppContainerView: class {
 
 final public class AppContainer: UITabBarController, AppContainerView {
   
-  public var presenter: AppContainerPresenterType?
+  public var viewModel: AppContainerViewModel!
   
   public required init(photoBrowserViewController: PhotosBrowserViewController) {
     self.photoBrowserViewController = photoBrowserViewController

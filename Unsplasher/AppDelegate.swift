@@ -33,7 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func setupView() {
     window = UIWindow(frame: UIScreen.main.bounds)
-    let appContainer = AppContainerBuilder().buildContainer()!
+    let pvc = PhotosBrowserViewController()
+    let gp = GetPhotosService()
+    let pc = PhotoCachingService(photoFetcher: gp)
+    pvc.viewModel = PhotosBrowserViewModel(photoCache: pc)
+    let appContainer = AppContainer(photoBrowserViewController: pvc)
     window?.rootViewController = appContainer
     window?.makeKeyAndVisible()
     window?.backgroundColor = .white
