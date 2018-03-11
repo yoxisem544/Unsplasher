@@ -12,13 +12,16 @@ extension Scene {
   
   func viewController() -> UIViewController {
     switch self {
-    case .appContainer(let viewModel):
-      let appContainer = AppContainer(photoBrowserViewController: <#T##PhotosBrowserViewController#>)
+//    case .appContainer(let viewModel):
+//      let appContainer = AppContainer(photoBrowserViewController: <#T##PhotosBrowserViewController#>)
     case .photoBrowser(let viewModel):
-      let vc = PhotosBrowserViewController()
+      var vc = PhotosBrowserViewController()
       vc.bindViewModel(to: viewModel)
       return vc
+    default:
+      fatalError()
     }
+    
   }
   
 }
