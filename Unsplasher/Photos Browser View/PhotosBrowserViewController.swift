@@ -12,12 +12,12 @@ public protocol PhotosBrowserView: class {
   func reloadPhotos(photos: [PhotosViewModel])
 }
 
-final public class PhotosBrowserViewController: UIViewController, PhotosBrowserView {
+final public class PhotosBrowserViewController: UIViewController, PhotosBrowserView, BindableType {
   
   private var navigationBar: UnsplasherNavigationBar!
   private var photoDisplayingView: PhotoDisplayView!
   
-  public var viewModel: PhotosBrowserViewModelType!
+  public var viewModel: PhotosBrowserViewModel!
   
   public override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +28,10 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
     viewModel.fetchMorePhotos().then(execute: {
       self.reloadPhotos(photos: self.viewModel.photos)
     })
+  }
+  
+  func bindViewModel() {
+    // do something
   }
   
   private func configuerNavigationBar() {

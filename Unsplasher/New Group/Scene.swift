@@ -10,5 +10,6 @@ import Foundation
 
 // Let's see how many scenes we have here.
 enum Scene {
-  case appContainer
+  case appContainer(AppContainerViewModel)
+  case photoBrowser(PhotosBrowserViewModel)
 }

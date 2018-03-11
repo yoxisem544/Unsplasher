@@ -9,18 +9,15 @@
 import Foundation
 import PromiseKit
 
-public protocol PhotosBrowserViewModelType: class {
-  func fetchMorePhotos() -> Promise<()>
-  var photos: [PhotosViewModel] { get set }
-}
-
-public class PhotosBrowserViewModel: PhotosBrowserViewModelType {
+final public class PhotosBrowserViewModel {
   let photoCache: PhotoCachingServiceType
+  let sceneCoordinator: SceneCoordinatorType
   
   public var photos: [PhotosViewModel] = []
   
-  init(photoCache: PhotoCachingServiceType) {
+  init(photoCache: PhotoCachingServiceType, coordinator: SceneCoordinatorType) {
     self.photoCache = photoCache
+    self.sceneCoordinator = coordinator
   }
   
   public func fetchMorePhotos() -> Promise<()> {
