@@ -20,6 +20,8 @@ PODS:
   - PromiseKit/UIKit (4.4.3):
     - PromiseKit/CorePromise
   - ReSwift (4.0.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
   - SDWebImage (4.3.2):
     - SDWebImage/Core (= 4.3.2)
@@ -33,6 +35,7 @@ DEPENDENCIES:
   - Fabric
   - NetworkRequestKit
   - ReSwift
+  - RxCocoa
   - RxSwift
   - SDWebImage
   - SwiftyUserDefaults
@@ -45,11 +48,12 @@ SPEC CHECKSUMS:
   NetworkRequestKit: 569fbfaa13ddb22fd54c2711be37db51add14524
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 3fc00719b254ce9df260325fd64bfbbadf946503
+PODFILE CHECKSUM: 04f10be4d08fcad7993a0875030f2b807c9a110b
 
 COCOAPODS: 1.4.0

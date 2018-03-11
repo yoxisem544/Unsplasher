@@ -15,7 +15,10 @@ public protocol AppContainerBuilderType {
 final public class AppContainerBuilder : AppContainerBuilderType {
   
   public func buildContainer() -> UIViewController? {
-    let photosBrowserModule = PhotosBrowserBuilder().buildPhotoBrowserModule() as! PhotosBrowserViewController
+    let photosBrowserModule = PhotosBrowserViewController()
+    let getPhoto = GetPhotosService()
+    let photoCacheService = PhotoCachingService(photoFetcher: getPhoto)
+    photosBrowserModule.viewModel = PhotosBrowserViewModel(photoCache: photoCacheService)
     
     let view = AppContainer(photoBrowserViewController: photosBrowserModule)
     

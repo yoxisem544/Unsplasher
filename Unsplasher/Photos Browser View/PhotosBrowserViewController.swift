@@ -17,7 +17,7 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
   private var navigationBar: UnsplasherNavigationBar!
   private var photoDisplayingView: PhotoDisplayView!
   
-  public var presenter: PhotosBrowserPresenterType?
+  public var viewModel: PhotosBrowserViewModelType!
   
   public override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,7 +25,9 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
     configuerNavigationBar()
     configurePhotoDisplayingView()
     
-    presenter?.loadMorePhotos()
+    viewModel.fetchMorePhotos().then(execute: {
+      self.reloadPhotos(photos: self.viewModel.photos)
+    })
   }
   
   private func configuerNavigationBar() {

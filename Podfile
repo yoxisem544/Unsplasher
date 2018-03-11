@@ -8,6 +8,7 @@ target 'Unsplasher' do
   # Pods for Unsplasher
   pod 'NetworkRequestKit'
   pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'ReSwift'
   pod 'Fabric'
   pod 'Crashlytics'
