@@ -12,7 +12,7 @@ public protocol AppContainerView: class {
   
 }
 
-final public class AppContainer: UITabBarController, AppContainerView {
+final public class AppContainer: UITabBarController, AppContainerView, BindableType {
   
   public var viewModel: AppContainerViewModel!
   
@@ -36,6 +36,10 @@ final public class AppContainer: UITabBarController, AppContainerView {
     
     // set vcs
     setViewControllers([photoBrowserViewController], animated: false)
+  }
+  
+  func bindViewModel() {
+    // do something
   }
   
 }

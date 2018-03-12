@@ -33,13 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func setupView() {
     window = UIWindow(frame: UIScreen.main.bounds)
-    let pvc = PhotosBrowserViewController()
-    let gp = GetPhotosService()
-    let pc = PhotoCachingService(photoFetcher: gp)
-    pvc.viewModel = PhotosBrowserViewModel(photoCache: pc)
-    let appContainer = AppContainer(photoBrowserViewController: pvc)
-    window?.rootViewController = appContainer
-    window?.makeKeyAndVisible()
+    
+    let sceneCoordinator = SceneCoordinator(window: window!)
+    let appContainerViewModel = AppContainerViewModel(coordinator: sceneCoordinator)
+    let appContainerScene = Scene.appContainer(appContainerViewModel)
+    sceneCoordinator.transition(to: appContainerScene, type: .root)
+    
+    // Styles
     window?.backgroundColor = .white
     
     UITabBar.appearance().tintColor = UnsplasherColor.dark

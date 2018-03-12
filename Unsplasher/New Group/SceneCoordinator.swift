@@ -17,9 +17,9 @@ class SceneCoordinator: SceneCoordinatorType {
 
   required init(window: UIWindow) {
     self.window = window // store the ref to window
-    // window that appdelegate gave us at first will have a root vc on default
-    // root vc won't be nil
-    currentViewController = window.rootViewController!
+    // not using storyboard here, so root view controller window gave us is nil
+    // give a empty vc here
+    currentViewController = UIViewController()
   }
 
   static func actualViewController(for viewController: UIViewController) -> UIViewController {
@@ -42,6 +42,7 @@ class SceneCoordinator: SceneCoordinatorType {
       // if transit to root, get actual vc for vc, then set it to root
       currentViewController = SceneCoordinator.actualViewController(for: viewController)
       window.rootViewController = viewController // make it root
+      window.makeKeyAndVisible()
       subject.onCompleted() // then complete this subject.
       
     case .push:

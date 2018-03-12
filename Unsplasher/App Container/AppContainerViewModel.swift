@@ -8,6 +8,12 @@
 
 import Foundation
 
-final public class AppContainerViewModel {
+public struct AppContainerViewModel {
+  
+  let sceneCoordinator: SceneCoordinatorType
+  
+  init(coordinator: SceneCoordinatorType) {
+    self.sceneCoordinator = coordinator
+  }
   
 }
