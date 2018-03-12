@@ -11,10 +11,17 @@ import UIKit
 final public class UnsplasherNavigationBar: UIView {
   
   private var titleLabel: UILabel!
+  private var rightDisclosureImageView: UIImageView!
   
   public var title: String = "" {
     didSet {
-      setTitle(text: title)
+      setTitle(text: title.uppercased())
+    }
+  }
+  
+  private var shouldDisclose: Bool = false {
+    didSet {
+      rotateDisclosureImage()
     }
   }
   
@@ -31,7 +38,7 @@ final public class UnsplasherNavigationBar: UIView {
                 shadowOffset: CGSize(width: 0, height: 0.5))
     
     configureTitleLabel()
-    
+    configureRightDisclosureImageView()
   }
   
   private override init(frame: CGRect) {
@@ -45,11 +52,35 @@ final public class UnsplasherNavigationBar: UIView {
   private func configureTitleLabel() {
     titleLabel = UILabel()
     titleLabel
-      .changeFontSize(to: 17)
-      .changeTextColor(to: .black)
+      .changeFont(to: .boldSystemFont(ofSize: 17))
+      .changeTextColor(to: UnsplasherColor.dark)
       .changeNumberOfLines(to: 1)
       .changeTextAlignment(to: .center)
       .anchor(to: self)
+    
+    titleLabel.isUserInteractionEnabled = true
+    titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(UnsplasherNavigationBar.disclouseActionRecieved)))
+  }
+  
+  private func configureRightDisclosureImageView() {
+    let height = 7.cgFloat
+    let width = height * 2
+    rightDisclosureImageView = UIImageView(frame: CGRect(origin: .zero,
+                                                         size: CGSize(width: width, height: height)))
+    rightDisclosureImageView.contentMode = .scaleAspectFill
+    rightDisclosureImageView.image = #imageLiteral(resourceName: "DownDisclosureIcon")
+    rightDisclosureImageView.anchor(to: self)
+    
+    rightDisclosureImageView.isUserInteractionEnabled = true
+    rightDisclosureImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(UnsplasherNavigationBar.disclouseActionRecieved)))
+    
+    adjustDisclosureImageView()
+  }
+  
+  private func adjustDisclosureImageView() {
+    rightDisclosureImageView
+      .move(2, pointsRightFrom: titleLabel)
+      .centerY(to: titleLabel)
   }
   
   private var barCenterY: CGFloat {
@@ -69,6 +100,22 @@ final public class UnsplasherNavigationBar: UIView {
     titleLabel.sizeToFit()
     titleLabel.centerX(inside: self)
     titleLabel.center.y = barCenterY
+    
+    adjustDisclosureImageView()
+  }
+  
+  @objc private func disclouseActionRecieved() {
+    shouldDisclose = !shouldDisclose
+  }
+  
+  private func rotateDisclosureImage() {
+    let transform = shouldDisclose ? CGAffineTransform(rotationAngle: CGFloat.pi) : CGAffineTransform.identity
+    UIView.animate(withDuration: 0.2,
+                   delay: 0,
+                   options: .curveEaseOut,
+                   animations: {
+                    self.rightDisclosureImageView.transform = transform
+    }, completion: nil)
   }
   
 }
