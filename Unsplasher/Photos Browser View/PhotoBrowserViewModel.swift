@@ -39,6 +39,7 @@ public struct PhotosViewModel {
   let photoSize: CGSize
   let author: String
   let username: String
+  let authorAvatarURL: String?
   
   init(photoResult: GetPhotoResult) {
     photoURLs = photoResult.photo.urls
@@ -46,6 +47,7 @@ public struct PhotosViewModel {
                        height: photoResult.photo.height.cgFloat)
     author = (photoResult.user.firstName ?? "") + " " + (photoResult.user.lastName ?? "")
     username = photoResult.user.username
+    authorAvatarURL = photoResult.user.profileImage.small
   }
   
   public static func build(with photoResults: [GetPhotoResult]) -> [PhotosViewModel] {

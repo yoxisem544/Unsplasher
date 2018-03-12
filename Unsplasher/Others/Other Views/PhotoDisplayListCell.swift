@@ -22,6 +22,7 @@ final public class PhotoDisplayListCell: UICollectionViewCell {
       contentImageView.setImage(with: vm.photoURLs.regular)
       nameLabel.text = vm.author
       socialMediaLabel.text = "@" + vm.username
+      avatorImageView.setImage(with: vm.authorAvatarURL)
     }
   }
   
