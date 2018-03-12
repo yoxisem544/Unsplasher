@@ -12,6 +12,8 @@ final public class UnsplasherNavigationBar: UIView {
   
   private var titleLabel: UILabel!
   private var rightDisclosureImageView: UIImageView!
+  private var changeViewModeButton: UIButton!
+  private var searchButton: UIButton!
   
   public var title: String = "" {
     didSet {
@@ -39,6 +41,9 @@ final public class UnsplasherNavigationBar: UIView {
     
     configureTitleLabel()
     configureRightDisclosureImageView()
+    configureSearchButton()
+    configureChangeViewModeButton()
+    
   }
   
   private override init(frame: CGRect) {
@@ -81,6 +86,31 @@ final public class UnsplasherNavigationBar: UIView {
     rightDisclosureImageView
       .move(2, pointsRightFrom: titleLabel)
       .centerY(to: titleLabel)
+  }
+  
+  private func generateButton(of image: UIImage) -> UIButton {
+    let button = UIButton(type: .system)
+    button.frame.size = CGSize(width: 14, height: 14)
+    button.tintColor = UnsplasherColor.dark
+    button.setImage(image, for: .normal)
+    
+    return button
+  }
+  
+  private func configureSearchButton() {
+    searchButton = generateButton(of: #imageLiteral(resourceName: "SearchIcon"))
+    searchButton
+      .move(16, pointsTrailingToAndInside: self)
+      .anchor(to: self)
+    searchButton.center.y = barCenterY
+  }
+  
+  private func configureChangeViewModeButton() {
+    changeViewModeButton = generateButton(of: #imageLiteral(resourceName: "GridIcon"))
+    changeViewModeButton
+      .move(30, pointsLeftFrom: searchButton)
+      .anchor(to: self)
+    changeViewModeButton.center.y = barCenterY
   }
   
   private var barCenterY: CGFloat {
