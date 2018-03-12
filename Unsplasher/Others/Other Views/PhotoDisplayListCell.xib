@@ -33,8 +33,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-a1-JGd">
-                                <rect key="frame" x="32" y="8" width="31" height="14"/>
+                                <rect key="frame" x="32" y="9" width="31" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-if-JhK">
+                                <rect key="frame" x="32" y="24" width="26.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,8 +49,10 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="Ipv-ss-CEQ"/>
                             <constraint firstItem="RtJ-a1-JGd" firstAttribute="leading" secondItem="B45-sd-a4Y" secondAttribute="trailing" constant="4" id="Mi9-1d-19N"/>
-                            <constraint firstItem="RtJ-a1-JGd" firstAttribute="top" secondItem="B45-sd-a4Y" secondAttribute="top" id="QON-kN-3g9"/>
+                            <constraint firstItem="RtJ-a1-JGd" firstAttribute="top" secondItem="B45-sd-a4Y" secondAttribute="top" constant="1" id="QON-kN-3g9"/>
+                            <constraint firstItem="7RG-if-JhK" firstAttribute="leading" secondItem="B45-sd-a4Y" secondAttribute="trailing" constant="4" id="RW2-nU-GXU"/>
                             <constraint firstItem="B45-sd-a4Y" firstAttribute="centerY" secondItem="P8V-Sz-wsa" secondAttribute="centerY" id="S0r-Fy-AqC"/>
+                            <constraint firstItem="7RG-if-JhK" firstAttribute="top" secondItem="RtJ-a1-JGd" secondAttribute="bottom" constant="1" id="ZC2-vD-qe7"/>
                             <constraint firstItem="B45-sd-a4Y" firstAttribute="leading" secondItem="P8V-Sz-wsa" secondAttribute="leading" id="rzo-SN-rDr"/>
                         </constraints>
                     </view>
@@ -66,6 +74,7 @@
                 <outlet property="contentImageView" destination="fYe-Fx-BNG" id="Eya-GE-1Pb"/>
                 <outlet property="nameLabel" destination="RtJ-a1-JGd" id="zXv-QF-b9x"/>
                 <outlet property="photographerContainerView" destination="P8V-Sz-wsa" id="ZPU-13-4qj"/>
+                <outlet property="socialMediaLabel" destination="7RG-if-JhK" id="epT-f9-exu"/>
             </connections>
             <point key="canvasLocation" x="-222" y="24.5"/>
         </collectionViewCell>

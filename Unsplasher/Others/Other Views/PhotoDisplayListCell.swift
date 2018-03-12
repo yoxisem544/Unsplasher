@@ -21,6 +21,7 @@ final public class PhotoDisplayListCell: UICollectionViewCell {
       guard let vm = photoViewModel else { return }
       contentImageView.setImage(with: vm.photoURLs.regular)
       nameLabel.text = vm.author
+      socialMediaLabel.text = "@" + vm.username
     }
   }
   
@@ -41,6 +42,10 @@ final public class PhotoDisplayListCell: UICollectionViewCell {
     
     nameLabel
       .changeFont(to: UIFont.boldSystemFont(ofSize: 12))
+      .changeTextColor(to: UnsplasherColor.dark)
+    
+    socialMediaLabel
+      .changeFontSize(to: 10)
       .changeTextColor(to: UnsplasherColor.dark)
   }
   

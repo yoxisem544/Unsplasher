@@ -37,7 +37,7 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
   private func configuerNavigationBar() {
     navigationBar = UnsplasherNavigationBar()
     navigationBar.anchor(to: view)
-    navigationBar.title = "yaaa"
+    navigationBar.title = "latest"
     navigationBar.delegate = self
   }
   
