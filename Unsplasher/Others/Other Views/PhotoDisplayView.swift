@@ -15,7 +15,8 @@ public enum PhotoDisplayStyle {
 
 final public class PhotoDisplayView: UIView {
   
-  private var displayingCollectionViewFlowLayout: CHTCollectionViewWaterfallLayout!
+  private var gridFlowLayout: CHTCollectionViewWaterfallLayout!
+  private var listFlowLayout: CHTCollectionViewWaterfallLayout!
   private var displayingCollectionView: UICollectionView!
   
   public var photos: [PhotosViewModel] = [] {
@@ -24,7 +25,11 @@ final public class PhotoDisplayView: UIView {
     }
   }
   
-  public var style: PhotoDisplayStyle = .grid
+  public var style: PhotoDisplayStyle = .grid {
+    didSet {
+      changeViewingMode(style)
+    }
+  }
   private let lineSpacing: CGFloat = 8
   private let interitemSpacing: CGFloat = 8
   private var itemsPerRow: Int {
@@ -65,16 +70,26 @@ final public class PhotoDisplayView: UIView {
   }
   
   private func configureDisplayingCollectionView() {
-    displayingCollectionViewFlowLayout = CHTCollectionViewWaterfallLayout()
-    displayingCollectionViewFlowLayout.columnCount = 2
-    displayingCollectionViewFlowLayout.minimumColumnSpacing = lineSpacing
-    displayingCollectionViewFlowLayout.minimumInteritemSpacing = interitemSpacing
-    displayingCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: interitemSpacing,
-                                                                   left: interitemSpacing,
-                                                                   bottom: interitemSpacing,
-                                                                   right: interitemSpacing)
+    gridFlowLayout = CHTCollectionViewWaterfallLayout()
+    gridFlowLayout.columnCount = 2
+    gridFlowLayout.minimumColumnSpacing = lineSpacing
+    gridFlowLayout.minimumInteritemSpacing = interitemSpacing
+    gridFlowLayout.sectionInset = UIEdgeInsets(top: interitemSpacing,
+                                               left: interitemSpacing,
+                                               bottom: interitemSpacing,
+                                               right: interitemSpacing)
+    
+    listFlowLayout = CHTCollectionViewWaterfallLayout()
+    listFlowLayout.columnCount = 1
+    listFlowLayout.minimumColumnSpacing = lineSpacing
+    listFlowLayout.minimumInteritemSpacing = interitemSpacing
+    listFlowLayout.sectionInset = UIEdgeInsets(top: interitemSpacing,
+                                               left: interitemSpacing,
+                                               bottom: interitemSpacing,
+                                               right: interitemSpacing)
+    
     displayingCollectionView = UICollectionView(frame: bounds,
-                                                collectionViewLayout: displayingCollectionViewFlowLayout)
+                                                collectionViewLayout: gridFlowLayout)
     
     displayingCollectionView.backgroundColor = .white
     displayingCollectionView.anchor(to: self)
@@ -83,6 +98,20 @@ final public class PhotoDisplayView: UIView {
     
     displayingCollectionView.dataSource = self
     displayingCollectionView.delegate = self
+  }
+  
+  private func changeViewingMode(_ mode: PhotoDisplayStyle) {
+    switch mode {
+    case .grid:
+      displayingCollectionView.setCollectionViewLayout(gridFlowLayout, animated: true)
+    case .list:
+      if displayingCollectionView.contentOffset.y <= 50 {
+        Queue.delayInMainQueueFor(0.05, block: {
+          self.displayingCollectionView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+        })
+      }
+      displayingCollectionView.setCollectionViewLayout(listFlowLayout, animated: true)
+    }
   }
   
 }

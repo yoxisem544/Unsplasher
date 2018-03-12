@@ -38,6 +38,7 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
     navigationBar = UnsplasherNavigationBar()
     navigationBar.anchor(to: view)
     navigationBar.title = "yaaa"
+    navigationBar.delegate = self
   }
   
   private func configurePhotoDisplayingView() {
@@ -51,6 +52,14 @@ final public class PhotosBrowserViewController: UIViewController, PhotosBrowserV
   
   public func reloadPhotos(photos: [PhotosViewModel]) {
     photoDisplayingView.photos = photos
+  }
+  
+}
+
+extension PhotosBrowserViewController : UnsplasherNavigationBarDelegate {
+  
+  public func changeViewModeButtonTapped(_ button: UIButton, mode: PhotoDisplayStyle) {
+    photoDisplayingView.style = mode
   }
   
 }

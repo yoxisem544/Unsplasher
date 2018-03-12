@@ -8,12 +8,22 @@
 
 import UIKit
 
+public protocol UnsplasherNavigationBarDelegate: class {
+  func changeViewModeButtonTapped(_ button: UIButton, mode: PhotoDisplayStyle)
+}
+
 final public class UnsplasherNavigationBar: UIView {
   
   private var titleLabel: UILabel!
   private var rightDisclosureImageView: UIImageView!
   private var changeViewModeButton: UIButton!
   private var searchButton: UIButton!
+  
+  public private(set) var viewMode: PhotoDisplayStyle = .grid {
+    didSet {
+      delegate?.changeViewModeButtonTapped(searchButton, mode: viewMode)
+    }
+  }
   
   public var title: String = "" {
     didSet {
@@ -26,6 +36,8 @@ final public class UnsplasherNavigationBar: UIView {
       rotateDisclosureImage()
     }
   }
+  
+  public weak var delegate: UnsplasherNavigationBarDelegate?
   
   // MARK: - Init
   public convenience init() {
@@ -111,6 +123,9 @@ final public class UnsplasherNavigationBar: UIView {
       .move(30, pointsLeftFrom: searchButton)
       .anchor(to: self)
     changeViewModeButton.center.y = barCenterY
+    changeViewModeButton.addTarget(self,
+                                   action: #selector(UnsplasherNavigationBar.changeViewModeButtonClicked),
+                                   for: .touchUpInside)
   }
   
   private var barCenterY: CGFloat {
@@ -136,6 +151,14 @@ final public class UnsplasherNavigationBar: UIView {
   
   @objc private func disclouseActionRecieved() {
     shouldDisclose = !shouldDisclose
+  }
+  
+  @objc private func changeViewModeButtonClicked() {
+    if viewMode == .grid {
+      viewMode = .list
+    } else {
+      viewMode = .grid
+    }
   }
   
   private func rotateDisclosureImage() {
