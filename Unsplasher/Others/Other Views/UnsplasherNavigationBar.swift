@@ -156,8 +156,10 @@ final public class UnsplasherNavigationBar: UIView {
   @objc private func changeViewModeButtonClicked() {
     if viewMode == .grid {
       viewMode = .list
+      changeViewModeButton.setImage(#imageLiteral(resourceName: "ListIcon"), for: .normal)
     } else {
       viewMode = .grid
+      changeViewModeButton.setImage(#imageLiteral(resourceName: "GridIcon"), for: .normal)
     }
   }
   
