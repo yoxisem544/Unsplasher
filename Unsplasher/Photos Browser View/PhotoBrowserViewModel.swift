@@ -37,11 +37,13 @@ public struct PhotosViewModel {
   
   let photoURLs: UnsplashPhotoURLs
   let photoSize: CGSize
+  let author: String
   
   init(photoResult: GetPhotoResult) {
     photoURLs = photoResult.photo.urls
     photoSize = CGSize(width: photoResult.photo.width.cgFloat,
                        height: photoResult.photo.height.cgFloat)
+    author = (photoResult.user.firstName ?? "") + " " + (photoResult.user.lastName ?? "")
   }
   
   public static func build(with photoResults: [GetPhotoResult]) -> [PhotosViewModel] {

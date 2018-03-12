@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U4D-gw-Aff" customClass="PhotoDisplayListCell" customModule="Unsplasher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="274" height="371"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="274" height="371"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYe-Fx-BNG">
+                        <rect key="frame" x="0.0" y="0.0" width="274" height="327"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-Sz-wsa">
+                        <rect key="frame" x="0.0" y="327" width="274" height="44"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B45-sd-a4Y">
+                                <rect key="frame" x="0.0" y="8" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="D0N-Ct-cFn"/>
+                                    <constraint firstAttribute="width" constant="28" id="Ujc-Ts-4i8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-a1-JGd">
+                                <rect key="frame" x="32" y="8" width="31" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Ipv-ss-CEQ"/>
+                            <constraint firstItem="RtJ-a1-JGd" firstAttribute="leading" secondItem="B45-sd-a4Y" secondAttribute="trailing" constant="4" id="Mi9-1d-19N"/>
+                            <constraint firstItem="RtJ-a1-JGd" firstAttribute="top" secondItem="B45-sd-a4Y" secondAttribute="top" id="QON-kN-3g9"/>
+                            <constraint firstItem="B45-sd-a4Y" firstAttribute="centerY" secondItem="P8V-Sz-wsa" secondAttribute="centerY" id="S0r-Fy-AqC"/>
+                            <constraint firstItem="B45-sd-a4Y" firstAttribute="leading" secondItem="P8V-Sz-wsa" secondAttribute="leading" id="rzo-SN-rDr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="P8V-Sz-wsa" firstAttribute="top" secondItem="fYe-Fx-BNG" secondAttribute="bottom" id="Cuj-IY-dQE"/>
+                <constraint firstItem="P8V-Sz-wsa" firstAttribute="leading" secondItem="U4D-gw-Aff" secondAttribute="leading" id="P35-Nr-Q0C"/>
+                <constraint firstAttribute="trailing" secondItem="fYe-Fx-BNG" secondAttribute="trailing" id="Ylw-tE-c9A"/>
+                <constraint firstItem="fYe-Fx-BNG" firstAttribute="top" secondItem="U4D-gw-Aff" secondAttribute="top" id="dVj-1b-QGK"/>
+                <constraint firstItem="fYe-Fx-BNG" firstAttribute="leading" secondItem="U4D-gw-Aff" secondAttribute="leading" id="kMn-mb-ux0"/>
+                <constraint firstAttribute="trailing" secondItem="P8V-Sz-wsa" secondAttribute="trailing" id="qaW-rt-Ajx"/>
+                <constraint firstAttribute="bottom" secondItem="P8V-Sz-wsa" secondAttribute="bottom" id="xW3-YX-Qd9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="sw5-KO-14B"/>
+            <size key="customSize" width="274" height="371"/>
+            <connections>
+                <outlet property="avatorImageView" destination="B45-sd-a4Y" id="1V1-Gu-Bjh"/>
+                <outlet property="contentImageView" destination="fYe-Fx-BNG" id="Eya-GE-1Pb"/>
+                <outlet property="nameLabel" destination="RtJ-a1-JGd" id="zXv-QF-b9x"/>
+                <outlet property="photographerContainerView" destination="P8V-Sz-wsa" id="ZPU-13-4qj"/>
+            </connections>
+            <point key="canvasLocation" x="-222" y="24.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

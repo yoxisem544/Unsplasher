@@ -41,15 +41,15 @@ final public class PhotoDisplayView: UIView {
     }
   }
   
-  private var itemSize: CGSize {
+  private var itemWidth: CGFloat {
     get {
       switch style {
       case .grid:
         let width = (bounds.width - (3 * interitemSpacing)) / itemsPerRow.cgFloat
-        return CGSize(width: width, height: width)
+        return width
       case .list:
         let width = (bounds.width - (2 * interitemSpacing))
-        return CGSize(width: width, height: width)
+        return width
       }
     }
   }
@@ -94,13 +94,14 @@ final public class PhotoDisplayView: UIView {
     displayingCollectionView.backgroundColor = .white
     displayingCollectionView.anchor(to: self)
     
-    displayingCollectionView.register(cellTypes: [PhotoDisplayGridCell.self])
+    displayingCollectionView.register(cellTypes: [PhotoDisplayGridCell.self, PhotoDisplayListCell.self])
     
     displayingCollectionView.dataSource = self
     displayingCollectionView.delegate = self
   }
   
   private func changeViewingMode(_ mode: PhotoDisplayStyle) {
+    displayingCollectionView.reloadData()
     switch mode {
     case .grid:
       displayingCollectionView.setCollectionViewLayout(gridFlowLayout, animated: true)
@@ -127,9 +128,16 @@ extension PhotoDisplayView : UICollectionViewDataSource {
   }
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(with: PhotoDisplayGridCell.self, for: indexPath)
-    cell.photoImageView.setImage(with: photos[indexPath.row].photoURLs.small)
-    return cell
+    switch style {
+    case .grid:
+      let cell = collectionView.dequeueReusableCell(with: PhotoDisplayGridCell.self, for: indexPath)
+      cell.photoViewModel = photos[indexPath.row]
+      return cell
+    case .list:
+      let cell = collectionView.dequeueReusableCell(with: PhotoDisplayListCell.self, for: indexPath)
+      cell.photoViewModel = photos[indexPath.row]
+      return cell
+    }
   }
   
 }
@@ -137,10 +145,19 @@ extension PhotoDisplayView : UICollectionViewDataSource {
 extension PhotoDisplayView : CHTCollectionViewDelegateWaterfallLayout {
   
   public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    let photoSize = photos[indexPath.row].photoSize
-    let size = CGSize(width: itemSize.width,
-                      height: photoSize.height * itemSize.width / photoSize.width)
-    return size
+    switch style {
+    case .grid:
+      let photoSize = photos[indexPath.row].photoSize
+      let size = CGSize(width: itemWidth,
+                        height: photoSize.height * itemWidth / photoSize.width)
+      return size
+      
+    case .list:
+      let photoSize = photos[indexPath.row].photoSize
+      let size = CGSize(width: itemWidth,
+                        height: photoSize.height * itemWidth / photoSize.width + 44.cgFloat)
+      return size
+    }
   }
   
 }

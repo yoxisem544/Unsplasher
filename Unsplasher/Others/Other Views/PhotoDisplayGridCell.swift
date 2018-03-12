@@ -12,6 +12,13 @@ final public class PhotoDisplayGridCell: UICollectionViewCell {
   
   @IBOutlet weak var photoImageView: UIImageView!
   
+  public var photoViewModel: PhotosViewModel? {
+    didSet {
+      guard let vm = photoViewModel else { return }
+      photoImageView.setImage(with: vm.photoURLs.regular)
+    }
+  }
+  
   public override func awakeFromNib() {
     super.awakeFromNib()
     
